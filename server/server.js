@@ -1,11 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
-const { ApolloServer, gql } = require('apollo-server-express');
-// const { graphiqlExpress, graphqlExpress } = require("apollo-server-express");
-// const { makeExecutableSchema } = require("graphql-tools");
+const { ApolloServer } = require('apollo-server-express');
 require("dotenv").config({ path: "variables.env" });
 
 const app = express();
@@ -18,13 +15,10 @@ const User = require("./models/User")
 const { typeDefs } = require("./schema");
 const { resolvers } = require("./resolvers");
 
-// const schema = makeExecutableSchema({
-//   typeDefs: typeDefs,
-//   resolvers: resolvers
-// });
 
 const PORT = process.env.PORT || 9000;
 
+//Create GraphQL application
 const server = new ApolloServer
 ({ typeDefs, resolvers,
   context : {
@@ -35,20 +29,6 @@ server.applyMiddleware({ app });
 app.listen(PORT, () => {
   console.log(`Server started on ${PORT}`);
 })
-
-//Connect Schemas with graphQL
-// app.use(
-//   "/graphql",
-//   bodyParser.json(),
-//   graphqlExpress(({ currentUser }) => ({
-//     schema,
-//     context: {
-//       Job,
-//       User,
-//       currentUser
-//     }
-//   }))
-// );
 
 //Set uop JWT authentication middleware
 app.use(async (req, res, next) => {
@@ -64,18 +44,8 @@ app.use(async (req, res, next) => {
   next();
 })
 
-//Create GraphQL application
-// app.use("/graphiql", graphiqlExpress({ endpointURL: "/graphql" }));
-
-
 //Connect to Database and start Server
-
 mongoose
   .connect(process.env.MONGO_URI,{ useNewUrlParser: true, useCreateIndex: true, })
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err))
-  // .then(() =>
-  //   app.listen(PORT, () => {
-  //     console.log(`Server started on ${PORT}`);
-  //   })
-  // );

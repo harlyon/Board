@@ -1,0 +1,146 @@
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.navbar-toggler {
+  color: #008def;
+  padding: 6px 8px;
+  border: 1px solid #008def;
+  right: 0;
+  top: 10px;
+  position: absolute;
+}
+
+.navbar-toggler-icon {
+  width: inherit;
+  height: inherit;
+  line-height: 0;
+}
+
+.navbar-brand {
+  height: 45px;
+  margin-right: 30px;
+}
+
+.navbar-nav li a {
+  font-size: 12px;
+  color: #0a0a0a;
+  display: block;
+  text-transform: uppercase;
+}
+
+.navbar-nav>li>a {
+  padding: 15px 10px;
+  line-height: 25px;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li.active>a,
+.navbar-nav>li>a:hover,
+.navbar-nav>li>a:focus,
+.navbar-nav>li.active>a,
+.navbar-nav>.active>a:hover,
+.navbar-nav>.active>a,
+.navbar-nav>.active>a:focus,
+.navbar-nav>.active>a:hover,
+.tr-dropdown-menu li a:hover {
+  color: #008def;
+  background-color: transparent;
+}
+
+.tr-header .navbar-right {
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 12px 0;
+}
+
+.tr-header .nav-right i {
+  color: #008def;
+  margin-right: 5px;
+}
+
+.navbar-right .dropdown {
+  display: inline;
+  margin-right: 20px;
+  padding: 22px 0;
+}
+
+.navbar-right .dropdown-menu {
+  min-width: 150px;
+}
+
+.navbar-right .dropdown i,
+.sign-in li i {
+  color: #008def;
+}
+
+.navbar-right .dropdown span {
+  margin: 0 5px;
+  color: #252525;
+}
+
+.navbar-right .dropdown-menu a,
+.sign-in a {
+  color: #252525;
+  font-size: 12px;
+}
+
+.navbar-right .dropdown span:hover,
+.sign-in a:hover,
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+  color: #008def;
+  background-color: transparent;
+}
+
+.navbar-toggle {
+  border-color: #008def;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #008def;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.sign-in {
+  display: inline;
+  margin-right: 35px;
+}
+
+.sign-in li i {
+  margin-right: 5px;
+}
+
+.sign-in li {
+  display: inline-block;
+}
+
+.sign-in li:last-child {
+  position: relative;
+  margin-left: 10px;
+}
+
+.sign-in li:last-child:before {
+  position: absolute;
+  left: -11px;
+  top: 50%;
+  /* background-image: url(../images/others/sign-in-before.png); */
+  background-repeat: no-repeat;
+  width: 7px;
+  height: 10px;
+  content: "";
+  margin-top: -7px;
+}
+
+.tr-header .btn.btn-primary {
+  padding: 8px 20px 5px;
+  font-size: 12px;
+}

@@ -22,7 +22,7 @@ const Nav = () => {
               </span>
             </button>
             <a className="navbar-brand" href="index.html">
-              <i class="fa fa-cc-jcb fa-2x" aria-hidden="true"></i>
+              <i className="fa fa-cc-jcb fa-2x" aria-hidden="true"></i>
             </a>
           </div>
           <div className="collapse navbar-collapse" id="navbarNav">

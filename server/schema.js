@@ -2,6 +2,8 @@ exports.typeDefs = `
 type Job {
   _id: ID!
   title: String!
+  website: String!
+  email: String!
   company: String!
   imageUrl: String!
   category: String!
@@ -37,6 +39,8 @@ type Token {
 type Mutation {
   addJob(
     title: String!
+    website: String!
+    email: String!
     company: String!
     imageUrl: String!
     category: String!
@@ -53,6 +57,8 @@ type Mutation {
   updateUserJob(
     _id: ID!
     title: String!
+    website: String!
+    email: String!
     company: String!
     imageUrl: String!
     category: String!

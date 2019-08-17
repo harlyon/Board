@@ -9,19 +9,12 @@ const GET_JOBS = gql`
     getAllJobs {
       _id
       title
-      description
       imageUrl
-      instructions
       location
       company
-      category
-      requirement
       salary
-      description
-      deadline
       experience
       createdDate
-      username
     }
   }
 `;
@@ -43,8 +36,8 @@ const Jobs = () => {
   return (
     <div className="tab-pane fade show active container" id="four-colum">
       <div className="row">
-        {data.getAllJobs.map((item, _id) => (
-          <div className="col-md-4" key={_id}>
+        {data.getAllJobs.map(item => (
+          <div className="col-md-4" key={item._id}>
             <div className="job-item">
               <div className="">
                 <div className="job-info">
@@ -82,7 +75,7 @@ const Jobs = () => {
                     </li>
                   </ul>
                   <div className="time">
-                    <Link to={`/${_id}`}>
+                    <Link to={`/${item._id}`}>
                       <span>More</span>
                     </Link>
                     <span className="pull-right">Posted 23 hours ago</span>

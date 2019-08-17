@@ -30,6 +30,7 @@ h6 {
   margin: 0;
   padding: 0;
   list-style: none;
+  padding-bottom: 30px
 }
 
 .btn {
@@ -611,11 +612,11 @@ h6 {
 
 .user-image,
 .breadcrumb-logo {
-  width: 130px;
-  height: 130px;
+  /* width: 130px; */
+  /* height: 130px; */
   overflow: hidden;
   display: inline-block;
-  border-radius: 100%;
+  /* border-radius: 100%; */
   margin-bottom: 30px;
 }
 
@@ -833,6 +834,10 @@ h6 {
   line-height: 30px;
 }
 
+.job-details {
+  padding-top: 60px;
+}
+
 .job-details .tr-cta {
   margin-bottom: 30px;
 }
@@ -923,6 +928,95 @@ h6 {
 
 .list-menu li:last-child {
   border-right: 0;
+}
+
+.widget {
+  color: #a9a9a9;
+  padding: 35px 25px;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.widget ul li {
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.widget ul li a {
+  color: #a9a9a9;
+}
+
+.widget ul li a:hover {
+  color: #008def;
+}
+
+.widget_title {
+  color: #272727;
+  margin: 0 0 20px;
+}
+
+.widget span {
+  color: #707070;
+  font-size: 16px;
+  margin-bottom: 5px;
+  line-height: 16px;
+}
+
+.widget.short-info i {
+  color: #0389e7;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.widget.short-info li span {
+  display: block;
+}
+
+.widget.cmpany-info>span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.widget.cmpany-info ul {}
+
+.widget.cmpany-info ul li {
+  line-height: 20px;
+}
+
+.widget.cmpany-info ul li span {
+  font-size: 14px;
+}
+
+.widget-social {
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.widget-social ul li {
+  float: left;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.widget-social ul li:last-child {
+  margin-right: 0;
+}
+
+.widget-social .fa-facebook-square {
+  color: #0072bc;
+}
+
+.widget-social .fa-twitter-square {
+  color: #00aeef;
+}
+
+.widget-social .fa-google-plus-square {
+  color: #eb434a;
+}
+
+.widget-social .fa-linkedin-square {
+  color: #448ccb;
 }
 
 

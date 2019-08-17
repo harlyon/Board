@@ -72,6 +72,8 @@ exports.resolvers = {
       root,
       {
         title,
+        website,
+        email,
         company,
         imageUrl,
         category,
@@ -88,6 +90,8 @@ exports.resolvers = {
     ) => {
       const newJob = await new Job({
         title,
+        website,
+        email,
         company,
         imageUrl,
         category,

@@ -86,7 +86,7 @@ const Main = () => {
                 <div className="download-app">
                   <a href="/">
                     <div className="download-image">
-                      <i class="fa fa-google" aria-hidden="true"></i>
+                      <i className="fa fa-google" aria-hidden="true"></i>
                     </div>
                     <div className="download-info">
                       <span>available on</span>
@@ -99,7 +99,7 @@ const Main = () => {
                 <div className="download-app">
                   <a href="/">
                     <div className="download-image">
-                      <i class="fa fa-apple" aria-hidden="true"></i>
+                      <i className="fa fa-apple" aria-hidden="true"></i>
                     </div>
                     <div className="download-info">
                       <span>available on</span>
@@ -112,7 +112,7 @@ const Main = () => {
                 <div className="download-app">
                   <a href="/">
                     <div className="download-image">
-                      <i class="fa fa-windows" aria-hidden="true"></i>
+                      <i className="fa fa-windows" aria-hidden="true"></i>
                     </div>
                     <div className="download-info">
                       <span>available on</span>

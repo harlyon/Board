@@ -1019,6 +1019,58 @@ h6 {
   color: #448ccb;
 }
 
+.user-account {
+  overflow: hidden;
+  width: 360px;
+  display: inline-block;
+  padding: 50px 0 50px 0;
+}
+
+.user-account,
+.user-account a {
+  color: #bbc0d4;
+}
+
+.account-content {
+  padding: 35px 30px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.user-account .form-control,
+.user-account .dropdown {
+  padding: 5px 20px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  background-color: #fcfcfc;
+}
+
+.user-account .dropdown a {
+  display: block;
+}
+
+.user-account .dropdown {
+  padding: 12px 20px;
+  text-align: left;
+  border: 1px solid #e8e6e8;
+}
+
+.user-account .dropdown-menu {
+  width: 100%;
+  left: -20px !important;
+}
+
+.user-account .dropdown i {
+  float: right;
+  margin-top: 2px;
+}
+
+.user-account .btn {
+  width: 100%;
+  padding: 12px 20px 8px;
+  margin-bottom: 25px;
+}
+
 
 .footer-top {
   background-color: #fff;

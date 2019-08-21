@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Jobs from "./pages/Jobs";
 import client from "./context/config";
 import JobInfo from "./pages/JobInfo";
-import Signup from "./pages/Auth/Signup";
+import Register from "./pages/Auth/Register";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Nav />
           <Switch>
             <Route exact path="/" component={Main} />
-            <Route exact path="/signin" component={Signup} />
+            <Route exact path="/signin" component={Register} />
             <Route exact path="/jobs" component={Jobs} />
             <Route exact path="/:_id" component={JobInfo} />
           </Switch>

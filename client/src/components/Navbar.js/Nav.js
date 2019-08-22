@@ -41,10 +41,10 @@ const Nav = () => {
                 <i className="fa fa-user" />
               </li>
               <li>
-                <a href="/">Sign In </a>
+                <a href="/signin">Sign In </a>
               </li>
               <li>
-                <a href="/signin">Register</a>
+                <a href="/signup">Register</a>
               </li>
             </ul>
           </div>

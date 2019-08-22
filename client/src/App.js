@@ -10,23 +10,28 @@ import Jobs from "./pages/Jobs";
 import client from "./context/config";
 import JobInfo from "./pages/JobInfo";
 import Register from "./pages/Auth/Register";
+import Login from "./pages/Auth/Login";
+import { AuthProvider } from "./context/authConfig";
 
 function App() {
   return (
-    <ApolloProvider client={client}>
-      <ApolloHooksProvider client={client}>
-        <Router>
-          <Nav />
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/signin" component={Register} />
-            <Route exact path="/jobs" component={Jobs} />
-            <Route exact path="/:_id" component={JobInfo} />
-          </Switch>
-          <Footer />
-        </Router>
-      </ApolloHooksProvider>
-    </ApolloProvider>
+    <AuthProvider>
+      <ApolloProvider client={client}>
+        <ApolloHooksProvider client={client}>
+          <Router>
+            <Nav />
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route exact path="/signin" component={Login} />
+              <Route exact path="/signup" component={Register} />
+              <Route exact path="/jobs" component={Jobs} />
+              <Route exact path="/:_id" component={JobInfo} />
+            </Switch>
+            <Footer />
+          </Router>
+        </ApolloHooksProvider>
+      </ApolloProvider>
+    </AuthProvider>
   );
 }
 

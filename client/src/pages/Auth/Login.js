@@ -3,49 +3,16 @@ import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 import { AuthContext } from "../../context/authConfig";
 
-const SIGN_USER = gql`
-  mutation signupUser($username: String!, $email: String!, $password: String!) {
-    signupUser(username: $username, email: $email, password: $password) {
+const LOGIN_USER = gql`
+  mutation signinUser($username: String!, $password: String!) {
+    signinUser(username: $username, password: $password) {
       token
     }
   }
 `;
 
-const Signup = props => {
+const Login = () => {
   // WITHOUT-SEPRATE-AUTH-COMPONENT
-
-  // const [errors, setErrors] = useState({});
-  // const [values, setValues] = useState({
-  //   username: "",
-  //   email: "",
-  //   password: "",
-  //   confirmPassword: ""
-  // });
-
-  // const onChange = e => {
-  //   setValues({ ...values, [e.target.name]: e.target.value });
-  // };
-
-  // const [addUser, { loading }] = useMutation(SIGN_USER, {
-  //   update(proxy, result) {
-  //     console.log(result);
-  //   },
-  //   onError(err) {
-  //     setErrors(err.graphQLErrors.map(errors => errors.message));
-  //     console.log(err);
-  //   },
-  //   variables: values
-  // });
-
-  // const onSubmit = e => {
-  //   e.preventDefault();
-  //   addUser();
-  //   console.log("submitted");
-  // };
-
-  //WITH-AUTH-CONTEXT-COMPONENT
-
-  const context = useContext(AuthContext);
 
   const [errors, setErrors] = useState({});
   const [values, setValues] = useState({
@@ -55,24 +22,17 @@ const Signup = props => {
     confirmPassword: ""
   });
 
-  const onChange = e =>
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value
-    });
+  const onChange = e => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
 
-  const [addUser, { loading }] = useMutation(SIGN_USER, {
-    update(
-      _,
-      {
-        data: { register: userData }
-      }
-    ) {
-      context.login(userData);
-      props.history.push("/signin");
+  const [addUser, { loading }] = useMutation(LOGIN_USER, {
+    update(proxy, result) {
+      console.log(result);
     },
     onError(err) {
       setErrors(err.graphQLErrors.map(errors => errors.message));
+      console.log(err);
     },
     variables: values
   });
@@ -80,7 +40,44 @@ const Signup = props => {
   const onSubmit = e => {
     e.preventDefault();
     addUser();
+    console.log("submitted");
   };
+
+  //WITH-AUTH-CONTEXT-COMPONENT
+  // const context = useContext(AuthContext);
+
+  // const [errors, setErrors] = useState({});
+  // const [values, setValues] = useState({
+  //   username: "",
+  //   password: ""
+  // });
+
+  // const onChange = e =>
+  //   setValues({
+  //     ...values,
+  //     [e.target.name]: e.target.value
+  //   });
+
+  // const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+  //   update(
+  //     _,
+  //     {
+  //       data: { login: userData }
+  //     }
+  //   ) {
+  //     context.login(userData);
+  //     props.history.push("/");
+  //   },
+  //   onError(err) {
+  //     setErrors(err.graphQLErrors.map(errors => errors.message));
+  //   },
+  //   variables: values
+  // });
+
+  // const onSubmit = e => {
+  //   e.preventDefault();
+  //   loginUser();
+  // };
 
   return (
     <React.Fragment>
@@ -88,7 +85,7 @@ const Signup = props => {
         <div className="container">
           <div className="breadcrumb-info text-center">
             <div className="page-title">
-              <h1>Register Account</h1>
+              <h1>Log into your Account</h1>
             </div>
           </div>
         </div>
@@ -114,16 +111,6 @@ const Signup = props => {
                 </div>
                 <div className="form-group">
                   <input
-                    name="email"
-                    type="text"
-                    value={values.email}
-                    className="form-control"
-                    placeholder="Please Enter Your Email"
-                    onChange={onChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
                     name="password"
                     value={values.password}
                     type="password"
@@ -132,29 +119,10 @@ const Signup = props => {
                     onChange={onChange}
                   />
                 </div>
-                {/* <div className="user-option">
-                  <div className="checkbox">
-                    <label htmlFor="logged">
-                      <input type="checkbox" name="logged" id="logged" />
-                      Remember me
-                    </label>
-                  </div>
-                  <div className="forgot-password">
-                    <a href="/">I forgot password</a>
-                  </div>
-                </div> */}
                 <button type="submit" className="btn btn-primary">
-                  Register
+                  Log in
                 </button>
               </form>
-              {/* {errors && errors.message && (
-                <p>{errors.message.trim().split(":")[1]}</p>
-              )} */}
-              {/* <div className="new-user text-center">
-                <span>
-                  <a href="signup.html">Create a New Account</a>{" "}
-                </span>
-              </div> */}
               {Object.keys(errors).length > 0 && (
                 <div className="ui error message">
                   <div className="list" style={{ color: "red" }}>
@@ -172,4 +140,4 @@ const Signup = props => {
   );
 };
 
-export default Signup;
+export default Login;

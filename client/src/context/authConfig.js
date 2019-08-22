@@ -1,5 +1,5 @@
-import React, { createContext, useReducer } from "react";
 import jwtDecode from "jwt-decode";
+import React, { createContext, useReducer } from "react";
 
 const initialState = {
   user: null
@@ -15,7 +15,7 @@ if (localStorage.getItem("jwtToken")) {
 }
 
 const AuthContext = createContext({
-  user: [],
+  user: null,
   login: userData => {},
   logout: () => {}
 });

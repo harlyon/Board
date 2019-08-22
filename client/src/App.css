@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
-
 body {
   font-weight: normal;
   overflow-x: hidden;
@@ -16,12 +15,7 @@ body {
   background-repeat: no-repeat;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Varela Round', sans-serif;
   font-weight: normal;
 }
@@ -89,6 +83,14 @@ h6 {
   border-color: #008def;
 }
 
+.section {
+  padding: 40px;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 30px 0 30px 0;
+  border-radius: 4px;
+}
+
 .tr-users {
   color: #fff;
   padding: 100px 0;
@@ -98,8 +100,7 @@ h6 {
   z-index: 1;
 }
 
-.tr-users:before,
-.tr-users:after {
+.tr-users:before, .tr-users:after {
   position: absolute;
   content: "";
   top: 0;
@@ -251,8 +252,7 @@ h6 {
   line-height: 20px;
 }
 
-.download-app a:hover,
-.download-app a:focus {
+.download-app a:hover, .download-app a:focus {
   background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   border-radius: 5px;
@@ -311,7 +311,6 @@ h6 {
   margin-bottom: 20px;
 }
 
-
 .job-tab .nav-tabs>li a {
   display: inline-block;
   background-color: #fff;
@@ -322,10 +321,7 @@ h6 {
   padding: 5px 30px;
 }
 
-.job-tab .nav-tabs>li>a.active,
-.job-tab .nav-tabs>li a.active>:focus,
-.job-tab .nav-tabs>li>a.active:hover,
-.job-tab .nav-tabs>li>a:hover {
+.job-tab .nav-tabs>li>a.active, .job-tab .nav-tabs>li a.active>:focus, .job-tab .nav-tabs>li>a.active:hover, .job-tab .nav-tabs>li>a:hover {
   border: none;
   background-color: #008def;
   color: #fff;
@@ -375,8 +371,7 @@ h6 {
   margin-bottom: 30px;
 }
 
-.job-meta li,
-.job-meta li a {
+.job-meta li, .job-meta li a {
   color: #646464;
 }
 
@@ -423,9 +418,7 @@ h6 {
   line-height: 25px;
 }
 
-.job-item .btn.btn-primary,
-.role .btn.btn-primary,
-.job-item .time a span {
+.job-item .btn.btn-primary, .role .btn.btn-primary, .job-item .time a span {
   padding: 5px 10px;
   border-radius: 4px;
   line-height: 10px;
@@ -480,10 +473,7 @@ h6 {
   margin-bottom: 10px;
 }
 
-.item-overlay .job-info,
-.item-overlay .job-info ul li,
-.item-overlay .job-info ul li i,
-.item-overlay .job-info .tr-title a {
+.item-overlay .job-info, .item-overlay .job-info ul li, .item-overlay .job-info ul li i, .item-overlay .job-info .tr-title a {
   color: #fff;
 }
 
@@ -595,23 +585,17 @@ h6 {
   content: "/\00a0";
 }
 
-.breadcrumb li.active,
-.breadcrumb li a,
-.breadcrumb>li+li:before,
-.tr-breadcrumb .job-meta li,
-.tr-breadcrumb .job-meta li a {
+.breadcrumb li.active, .breadcrumb li a, .breadcrumb>li+li:before, .tr-breadcrumb .job-meta li, .tr-breadcrumb .job-meta li a {
   color: #fff;
 }
 
-.breadcrumb-logo img,
-.user-image img {
+.breadcrumb-logo img, .user-image img {
   width: 100%;
   height: 100%;
   display: inline-block;
 }
 
-.user-image,
-.breadcrumb-logo {
+.user-image, .breadcrumb-logo {
   /* width: 130px; */
   /* height: 130px; */
   overflow: hidden;
@@ -663,8 +647,7 @@ h6 {
   z-index: 9;
 }
 
-.breadcrumb-social span,
-.button-share span {
+.breadcrumb-social span, .button-share span {
   color: #2d373d;
   font-size: 12px;
   display: inline-block;
@@ -685,8 +668,7 @@ h6 {
   transform: translateX(-50%);
 }
 
-.breadcrumb-social span:after,
-.button-share span:after {
+.breadcrumb-social span:after, .button-share span:after {
   content: '';
   position: absolute;
   top: -10px;
@@ -730,7 +712,6 @@ h6 {
 .social-icon-bg i.fa-globe {
   background-color: #e96324;
 }
-
 
 .tr-breadcrumb .buttons {
   margin-top: 50px;
@@ -867,11 +848,7 @@ h6 {
   border: none;
 }
 
-.job-tabs>li a:hover,
-.job-tabs>li a:focus,
-.job-tabs>li.active>a,
-.job-tabs>li.active>a:focus,
-.job-tabs>li.active>a:hover {
+.job-tabs>li a:hover, .job-tabs>li a:focus, .job-tabs>li.active>a, .job-tabs>li.active>a:focus, .job-tabs>li.active>a:hover {
   border: none;
   color: #000;
   background-color: transparent;
@@ -978,8 +955,6 @@ h6 {
   margin-bottom: 10px;
 }
 
-.widget.cmpany-info ul {}
-
 .widget.cmpany-info ul li {
   line-height: 20px;
 }
@@ -1026,8 +1001,7 @@ h6 {
   padding: 50px 0 50px 0;
 }
 
-.user-account,
-.user-account a {
+.user-account, .user-account a {
   color: #bbc0d4;
 }
 
@@ -1037,8 +1011,7 @@ h6 {
   background-color: #fff;
 }
 
-.user-account .form-control,
-.user-account .dropdown {
+.user-account .form-control, .user-account .dropdown {
   padding: 5px 20px;
   border-radius: 30px;
   margin-bottom: 30px;
@@ -1071,6 +1044,202 @@ h6 {
   margin-bottom: 25px;
 }
 
+/* Job Post */
+
+.tr-post-job .tr-title {
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.tr-post-job .short-info .section {
+  overflow: visible;
+}
+
+.tr-post-job .dropdown {
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: #faf7fa;
+  border: 1px solid #e8e6e8;
+}
+
+.tr-post-job .col-sm-3 label {
+  margin-top: 12px;
+  font-weight: normal;
+  color: #2d3038;
+}
+
+.tr-post-job .dropdown-menu {
+  min-width: 100%;
+}
+
+.tr-post-job .dropdown a {
+  color: #2d3038;
+  display: block;
+}
+
+.tr-post-job .dropdown i {
+  float: right;
+  margin-top: 2px;
+}
+
+.tr-post-job .dropdown a:hover {
+  color: #008def;
+}
+
+.tr-post-job .exprience-level, .tr-post-job .job-category {
+  margin-bottom: 20px;
+}
+
+.tr-post-job input[type="radio"]+label {
+  cursor: pointer;
+  margin-right: 25px;
+  padding-left: 25px;
+  position: relative;
+  color: #2d3038;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.tr-post-job input[type="radio"]+label:last-of-type {
+  margin-right: 0;
+}
+
+.tr-post-job input[type="radio"] {
+  display: none;
+}
+
+.tr-post-job input[type="radio"]+label:before {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+}
+
+.tr-post-job input[type="radio"]+label:before {
+  border: 2px solid #008def;
+}
+
+.tr-post-job input[type="radio"]:checked+label:before {
+  border: 4px solid #008def;
+}
+
+.tr-post-job .radio-type, .tr-post-job .exprience {
+  padding: 12px 0;
+}
+
+.tr-post-job .aegotiable {
+  margin-top: 12px;
+}
+
+.tr-post-job .aegotiable span {
+  margin-right: 5px;
+}
+
+.tr-post-job .job-description .jqte {
+  padding: 12px 20px;
+  min-height: 250px;
+}
+
+.job-description .characters-left {
+  font-style: italic;
+  display: block;
+  margin-top: 5px;
+}
+
+.tr-post-job .job-description .row {
+  margin-bottom: 30px;
+}
+
+.premium-post ul {
+  margin-top: 30px;
+  max-width: 380px;
+}
+
+.premium-post ul li span {
+  float: right;
+}
+
+.premium-post ul li {
+  margin-bottom: 25px;
+}
+
+.premium-post ul li:last-child {
+  margin-bottom: 0;
+}
+
+.agreement label {
+  position: relative;
+  padding-left: 25px;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.agreement label input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.agreement label:before {
+  position: absolute;
+  color: #008def;
+  font-size: 16px;
+  content: "\f096";
+  font-family: 'FontAwesome';
+  left: 0;
+  top: 0;
+}
+
+.agreement label.checked:before {
+  content: "\f14a";
+  color: #008def;
+}
+
+.quick-rules .tr-title {
+  padding-bottom: 0;
+  border-bottom: 0;
+  margin-bottom: 15px;
+}
+
+.quick-rules a {
+  color: #7b7b7b;
+}
+
+.quick-rules a:hover {
+  color: #008def;
+}
+
+.quick-rules ul {
+  margin-top: 30px;
+}
+
+.quick-rules ul li {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 15px;
+}
+
+.quick-rules ul li:before {
+  position: absolute;
+  content: "";
+  top: 6px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #008def;
+  border-radius: 100%;
+}
+
+.quick-rules ul li:last-child {
+  margin-bottom: 0;
+}
 
 .footer-top {
   background-color: #fff;
@@ -1087,8 +1256,7 @@ h6 {
   margin-bottom: 20px;
 }
 
-.footer,
-.footer a {
+.footer, .footer a {
   color: #858585;
 }
 
@@ -1128,59 +1296,47 @@ h6 {
 }
 
 @media (max-width: 575px) {
-
-  .navbar-expand-lg>.container,
-  .navbar-expand-lg>.container-fluid {
+  .navbar-expand-lg>.container, .navbar-expand-lg>.container-fluid {
     margin-left: 15px;
     margin-right: 15px;
   }
-
   .banner-form .dropdown-menu {
     left: -10px !important;
   }
-
   .job-tab .nav-tabs::after {
     display: none;
   }
-
   .tr-users h1 {
     font-size: 30px;
   }
 }
 
 @media (max-width: 767px) {
-
   .tr-header .navbar-right {
     padding: 0;
     width: 100%;
   }
-
   .tr-header .btn.btn-primary {
     position: absolute;
     top: 8px;
     right: 70px;
     padding: 5px 15px 4px;
   }
-
   .navbar-right .dropdown {
     float: left;
     padding: 0;
     margin-right: 10px;
   }
-
   .sign-in {
     float: left;
     margin-right: 0;
   }
-
   .navbar-right .dropdown-menu {
     top: 40px;
   }
-
   .navbar-toggle {
     margin: 15px;
   }
-
   .btn {
     padding: 8px 20px 6px;
     font-size: 12px;

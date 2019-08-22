@@ -10,7 +10,7 @@ const Main = () => {
               <div className="job-find">
                 <h1>Find a Job</h1>
                 <span>5,798,298 Skilld People </span>
-                <a href="/" className="btn btn-primary">
+                <a href="/jobs" className="btn btn-primary">
                   Search Jobs
                 </a>
               </div>
@@ -19,7 +19,7 @@ const Main = () => {
               <div className="for-employers">
                 <h1>For Employers</h1>
                 <span>5,798,298 Skilld People</span>
-                <a href="/" className="btn btn-primary">
+                <a href="/signin" className="btn btn-primary">
                   Post a Job
                 </a>
               </div>

@@ -1,10 +1,88 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import gql from "graphql-tag";
+import { useMutation } from "@apollo/react-hooks";
+
+const ADD_JOB = gql`
+  mutation addJob(
+    $title: String!
+    $website: String!
+    $email: String!
+    $company: String!
+    $imageUrl: String!
+    $category: String!
+    $location: String!
+    $salary: String!
+    $experience: String!
+    $requirement: String!
+    $deadline: String!
+    $description: String!
+    $instructions: String!
+    $username: String!
+  ) {
+    addJob(
+      title: $title
+      website: $website
+      email: $email
+      company: $company
+      imageUrl: $imageUrl
+      category: $category
+      location: $location
+      salary: $salary
+      experience: $experience
+      requirement: $requirement
+      deadline: $deadline
+      description: $description
+      instructions: $instructions
+      username: $username
+    ) {
+      job
+    }
+  }
+`;
 
 const PostJob = () => {
+  const [errors, setErrors] = useState({});
+  const [values, setValues] = useState({
+    title: "",
+    category: "",
+    location: "",
+    company: "",
+    email: "",
+    image: "",
+    website: "",
+    salary: "",
+    deadline: "",
+    experience: "",
+    summary: "",
+    responsibilities: "",
+    requirement: ""
+  });
+
+  const [addJob, { loading }] = useMutation(ADD_JOB, {
+    update(proxy, result) {
+      console.log(result);
+    },
+    onError(err) {
+      setErrors(err.graphQLErrors.map(errors => errors.message));
+      console.log(err);
+    },
+    variables: values
+  });
+
+  const onChange = e => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+    console.log(values);
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    console.log("submitted");
+  };
+
   return (
     <div className="tr-post-job page-content">
       <div className="container">
-        <div className="row">
+        <form onSubmit={onSubmit} className="row">
           <div className="col-md-9">
             <div className="short-info code-edit-small">
               <div className="section">
@@ -17,9 +95,11 @@ const PostJob = () => {
                     <div className="form-group">
                       <input
                         name="title"
+                        value={values.title}
                         type="text"
                         className="form-control"
                         placeholder="title"
+                        onChange={onChange}
                       />
                     </div>
                   </div>
@@ -32,9 +112,11 @@ const PostJob = () => {
                     <div className="form-group">
                       <input
                         name="category"
+                        value={values.category}
                         type="text"
                         className="form-control"
                         placeholder="category"
+                        onChange={onChange}
                       />
                     </div>
                   </div>
@@ -48,9 +130,11 @@ const PostJob = () => {
                       <div className="form-group">
                         <input
                           name="location"
+                          value={values.location}
                           type="text"
                           className="form-control"
                           placeholder="location"
+                          onChange={onChange}
                         />
                       </div>
                     </div>
@@ -64,9 +148,11 @@ const PostJob = () => {
                     <div className="form-group">
                       <input
                         name="company"
+                        value={values.company}
                         type="text"
                         className="form-control"
                         placeholder="name"
+                        onChange={onChange}
                       />
                     </div>
                   </div>
@@ -79,9 +165,11 @@ const PostJob = () => {
                     <div className="form-group">
                       <input
                         name="email"
+                        value={values.email}
                         type="email"
                         className="form-control"
                         placeholder="email"
+                        onChange={onChange}
                       />
                     </div>
                   </div>
@@ -94,9 +182,11 @@ const PostJob = () => {
                     <div className="form-group">
                       <input
                         name="image"
+                        value={values.image}
                         type="text"
                         className="form-control"
                         placeholder="url"
+                        onChange={onChange}
                       />
                     </div>
                   </div>
@@ -109,9 +199,11 @@ const PostJob = () => {
                     <div className="form-group">
                       <input
                         name="website"
+                        value={values.website}
                         type="text"
                         className="form-control"
                         placeholder="url"
+                        onChange={onChange}
                       />
                     </div>
                   </div>
@@ -127,9 +219,11 @@ const PostJob = () => {
                           <div className="form-group">
                             <input
                               name="salary"
+                              value={values.salary}
                               type="text"
                               className="form-control"
                               placeholder="salary info"
+                              onChange={onChange}
                             />
                           </div>
                         </div>
@@ -145,8 +239,10 @@ const PostJob = () => {
                     <div className="calendar">
                       <input
                         type="date"
+                        name="deadline"
                         className="form-control"
-                        defaultValue="2017-06-25"
+                        value={values.deadline}
+                        onChange={onChange}
                       />
                     </div>
                   </div>
@@ -157,12 +253,19 @@ const PostJob = () => {
                   </div>
                   <div className="col-sm-9">
                     <div className="code-edit">
-                      <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>Entry Level</option>
-                        <option>Mid Level</option>
-                        <option>Mid-Senior Level</option>
-                        <option>Top Level</option>
+                      <select
+                        name="experience"
+                        id="inputState"
+                        onClick={onChange}
+                        className="form-control"
+                      >
+                        <option>...</option>
+                        <option value="Entry Level">Entry Level</option>
+                        <option value="Mid Level">Mid Level</option>
+                        <option value="Mid-Senior Level">
+                          Mid-Senior Level
+                        </option>
+                        <option value="Top Level">Top Level</option>
                       </select>
                     </div>
                   </div>
@@ -178,7 +281,13 @@ const PostJob = () => {
                 <div className="col-sm-9">
                   <div className="code-edit">
                     <span>Write few lines about your Job</span>
-                    <textarea rows="4" cols="50"></textarea>
+                    <textarea
+                      rows="4"
+                      name="summary"
+                      onChange={onChange}
+                      value={values.summary}
+                      cols="50"
+                    ></textarea>
                   </div>
                   <span className="characters-left">5000 Characters left</span>
                 </div>
@@ -190,7 +299,13 @@ const PostJob = () => {
                 <div className="col-sm-9">
                   <div className="code-edit">
                     <span>Write key responsibilities about your Job</span>
-                    <textarea rows="4" cols="50"></textarea>
+                    <textarea
+                      name="responsibilities"
+                      rows="4"
+                      onChange={onChange}
+                      value={values.instructions}
+                      cols="50"
+                    ></textarea>
                   </div>
                   <span className="characters-left">5000 Characters left</span>
                 </div>
@@ -202,7 +317,13 @@ const PostJob = () => {
                 <div className="col-sm-9">
                   <div className="code-edit">
                     <span>Write minimum requirements about your Job</span>
-                    <textarea rows="4" cols="50"></textarea>
+                    <textarea
+                      name="requirement"
+                      rows="4"
+                      onChange={onChange}
+                      value={values.requirement}
+                      cols="50"
+                    ></textarea>
                   </div>
                   <span className="characters-left">5000 Characters left</span>
                 </div>
@@ -241,7 +362,7 @@ const PostJob = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const { ApolloServer } = require('apollo-server-express');
-require("dotenv").config({ path: "variables.env" });
+require("dotenv").config({ path: "./variables.env" });
 
 const app = express();
 app.use(cors());

@@ -165,9 +165,9 @@ exports.resolvers = {
       //   valid: Object.keys(errors).length < 1
       // }
 
-       if (user) {
-         throw new Error("User already exists");
-       }
+      if (user) {
+        throw new Error("User already exists");
+      }
 
       const newUser = await new User({
         username,

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
-import { AuthContext } from "../../context/authConfig";
+//import { AuthContext } from "../../context/authConfig";
 
 const LOGIN_USER = gql`
   mutation signinUser($username: String!, $password: String!) {
@@ -11,16 +11,18 @@ const LOGIN_USER = gql`
   }
 `;
 
+const initialState = {
+  username: "",
+  email: "",
+  password: "",
+  confirmPassword: ""
+};
+
 const Login = () => {
   // WITHOUT-SEPRATE-AUTH-COMPONENT
 
   const [errors, setErrors] = useState({});
-  const [values, setValues] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: ""
-  });
+  const [values, setValues] = useState(initialState);
 
   const onChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -41,6 +43,7 @@ const Login = () => {
     e.preventDefault();
     addUser();
     console.log("submitted");
+    setValues(initialState);
   };
 
   //WITH-AUTH-CONTEXT-COMPONENT

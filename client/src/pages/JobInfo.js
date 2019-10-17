@@ -47,7 +47,7 @@ const JobInfo = ({
     return `Error! ${error.message}`;
   }
   return (
-    <div>
+    <React.Fragment>
       <div className="tr-breadcrumb bg-image section-before">
         <div className="container">
           <div className="breadcrumb-info text-center">
@@ -221,7 +221,7 @@ const JobInfo = ({
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

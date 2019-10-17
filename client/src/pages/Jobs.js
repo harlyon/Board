@@ -34,7 +34,17 @@ const Jobs = () => {
     return `Error! ${error.message}`;
   }
   return (
-    <div className="tab-pane fade show active container" id="four-colum">
+    <React.Fragment>
+      <div className="tr-breadcrumb bg-image section-before">
+        <div className="container">
+          <div className="breadcrumb-info text-center">
+            <div className="page-title">
+              <h1>Job List</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div className="tab-pane fade show active container" id="four-column">
       <div className="row">
         {data.getAllJobs.map(item => (
           <div className="col-md-4" key={item._id}>
@@ -87,6 +97,7 @@ const Jobs = () => {
         ))}
       </div>
     </div>
+    </React.Fragment>
   );
 };
 

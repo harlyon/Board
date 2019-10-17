@@ -6,13 +6,14 @@ import { AuthProvider } from "./context/authConfig";
 import client from "./context/config";
 import "./App.css";
 import Main from "./pages/Main";
-import Nav from "./components/Navbar.js/Nav";
+import Nav from "./components/Navbar/Nav";
 import Footer from "./components/Footer";
 import Jobs from "./pages/Jobs";
 import JobInfo from "./pages/JobInfo";
 import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
 import PostJob from "./pages/PostJob";
+import Index from "./components/Navbar/index";
 
 function App() {
   return (
